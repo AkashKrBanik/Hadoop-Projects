@@ -25,11 +25,11 @@ Add the following dependencies in `pom.xml`:
 ```
 Now reloaded the Maven project so that all dependencies were downloaded and added to the classpath. 
 
-### 2. Implement WordCount Classes
+### 2. Implement WordLength Classes
 The WordCount project consists of three main components: 
-- **Mapper**: `WC_Mapper.java`    – Handles the map phase of the process. 
-- **Reducer**: `WC_Reducer.java`  – Handles the reduce phase of the process. 
-- **Runner**: `WC_Runner.java`    – Acts as the driver to set up and run the MapReduce job. 
+- **Mapper**: `WL_Mapper.java`    – Handles the map phase of the process. 
+- **Reducer**: `WL_Reducer.java`  – Handles the reduce phase of the process. 
+- **Runner**: `WL_Runner.java`    – Acts as the driver to set up and run the MapReduce job. 
 
 ### 3. Build the Project
 Once all the code was written in the mapper, reducer and runner files, I built the project using Maven. I opened the terminal in IntelliJ and ran the following commands to clean and package the project: 
@@ -63,15 +63,15 @@ hadoop fs -put input.txt /input
 ```
 
 #### Execute WordCount Job
-Finally, I ran the WordCount job by executing the following command: 
+Finally, I ran the WordLength job by executing the following command: 
 ```bash
-hadoop jar target/wordcount-1.0-SNAPSHOT.jar org.akb.WC_Runner /input /output
+hadoop jar target/WordLength-1.0-SNAPSHOT.jar org.akb.WL_Runner /input/wl_input.txt /wl_output
 ```
 
 #### View Output
 Once the job finished, I verified the output by listing the contents of the /output directory in HDFS.
 ```bash
-hadoop fs -cat /output/part-00000
+hadoop fs -cat /wl_output/part-r-00000
 ```
 ---
 
