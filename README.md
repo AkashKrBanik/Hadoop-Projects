@@ -1,11 +1,9 @@
 # Hadoop-Projects
-# WordCount Hadoop Project
 
 This project demonstrates how to set up a Hadoop environment and implement a simple WordCount application using Java and Hadoop's MapReduce framework. The purpose of the WordCount application is to count the occurrences of each word in a given text file.
 
 ## Prerequisites
-
-- Xubuntu (or any Ubuntu-based OS) installed on VirtualBox
+- Xubuntu (or any Ubuntu or Linux-based OS) installed on VirtualBox
 - OpenJDK 8
 - Hadoop 3.3.6
 - Maven
@@ -30,13 +28,13 @@ sudo apt install openjdk-8-jdk
 ```
 When prompted for Yes/No, press Y to allow the installation to proceed.  
 
-Verify the installation:
+#### Step 1.3: Verify the installation:
 ```bash
 java -version
 ```
 If the installation is successful, the above command will display the openjdk version.
 
-#### Step 1.3: Set Up JAVA_HOME
+#### Step 1.4: Set Up JAVA_HOME
 Hadoop needs to know where Java is installed, so I need to set the JAVA_HOME environment variable.
 Find the Java path using the following command:
 ```bash
@@ -224,11 +222,14 @@ start-yarn.sh
 start-all.sh
 ```
 #### 5.4: Verify the Services
+To make sure everything was running, I used the jps command.
 ```bash
 jps
 ```
+This command listed running Hadoop services like NameNode, DataNode, ResourceManager, 
+and NodeManager.
 
-#### 5.5 After running your project, remember to stop all the Hadoop services.
+#### 5.5 Remember to stop all the Hadoop services, after running your project.
 Stop all services directly using
 ```bash
 stop-all.sh
@@ -244,69 +245,15 @@ stop-dfs.sh
 stop-yarn.sh
 ```
 
-
----
-
-## Running the WordCount Project
-
-### 1. Create a Maven Project
-- Add the following dependencies in `pom.xml`:
-```xml
-<dependencies>
-    <dependency>
-        <groupId>org.apache.hadoop</groupId>
-        <artifactId>hadoop-common</artifactId>
-        <version>3.3.6</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.hadoop</groupId>
-        <artifactId>hadoop-mapreduce-client-core</artifactId>
-        <version>3.3.6</version>
-    </dependency>
-</dependencies>
-```
-
-### 2. Implement WordCount Classes
-- **Mapper**: `WC_Mapper.java`
-- **Reducer**: `WC_Reducer.java`
-- **Runner**: `WC_Runner.java`
-
-### 3. Build the Project
+#### 6. Accessing Hadoop
+Finally, to access the Hadoop web interface and check the status of my cluster, I opened the 
+web browser and went to: 
 ```bash
-mvn clean package
+http://localhost:9870
 ```
-
-### 4. Run the Project
-#### Create Input File
-```bash
-nano input.txt
-```
-
-Add sample text:
-```
-This is the input file for hadoop project
-This is for Cloud Computing with AKB hadoop project file
-This is done for now
-```
-
-#### Upload to HDFS
-```bash
-hadoop fs -mkdir /input
-hadoop fs -put input.txt /input
-```
-
-#### Execute WordCount Job
-```bash
-hadoop jar target/wordcount-1.0-SNAPSHOT.jar org.akb.WC_Runner /input /output
-```
-
-#### View Output
-```bash
-hadoop fs -cat /output/part-00000
-```
-
+#### This brought up the Hadoop cluster summary page, confirming that everything was working as expected. 
 ---
 
 ## Conclusion
 
-By following this guide, you can successfully set up Hadoop, create a WordCount project, and run it on a distributed environment. The WordCount example demonstrates the basics of Hadoop's MapReduce framework.
+By following this guide, you can successfully set up and configire Java and Hadoop, create a WordCount project, and run it on a distributed environment. The WordCount example demonstrates the basics of Hadoop's MapReduce framework.
