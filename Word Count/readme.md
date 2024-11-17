@@ -8,7 +8,7 @@ After the project was created, I deleted the default main class, as it wasn’t 
 The next step was to add the necessary dependencies to the pom.xml file.
 
 ### 1. Create a Maven Project
-- Add the following dependencies in `pom.xml`:
+Add the following dependencies in `pom.xml`:
 ```xml
 <dependencies>
     <dependency>
@@ -32,7 +32,7 @@ The WordCount project consists of three main components:
 - **Runner**: `WC_Runner.java`    – Acts as the driver to set up and run the MapReduce job. 
 
 ### 3. Build the Project
-Once all the code was written, I built the project using Maven. I opened the terminal in IntelliJ and ran the following commands to clean and package the project: 
+Once all the code was written in the mapper, reducer and runner files, I built the project using Maven. I opened the terminal in IntelliJ and ran the following commands to clean and package the project: 
 ```bash
 mvn clean package
 ```
