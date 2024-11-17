@@ -253,7 +253,6 @@ http://localhost:9870
 ```
 #### This brought up the Hadoop cluster summary page, confirming that everything was working as expected. 
 <img src="https://github.com/AkashKrBanik/Hadoop-Projects/blob/main/ss_1.png" alt="Login Form" width="800">
----
 
 ## Conclusion
 
