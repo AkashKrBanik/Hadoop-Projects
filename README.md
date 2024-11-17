@@ -223,10 +223,27 @@ start-yarn.sh
 ```bash
 start-all.sh
 ```
-#### 5.4: Verify Services
+#### 5.4: Verify the Services
 ```bash
 jps
 ```
+
+#### 5.5 After running your project, remember to stop all the Hadoop services.
+Stop all services directly using
+```bash
+stop-all.sh
+```
+OR separately
+#### Stop HDFS
+```bash
+stop-dfs.sh
+```
+
+#### Stop YARN
+```bash
+stop-yarn.sh
+```
+
 
 ---
 
