@@ -86,4 +86,4 @@ hadoop fs -cat /wl_output/part-r-00000
 
 ## Conclusion
 
-By following this guide, you can successfully run your project on a distributed environment. The WordCount example demonstrates the basics of Hadoop's MapReduce framework.
+By following this guide, you can successfully run your project on a distributed environment. This WordLength example demonstrates the basics of Hadoop's MapReduce framework.
