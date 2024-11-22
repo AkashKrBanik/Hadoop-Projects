@@ -74,6 +74,15 @@ Once the job finished, I verified the output by listing the contents of the /out
 hadoop fs -cat /output/part-00000
 ```
 ---
+### Screenshots
+#### Input File Contents:
+<img src="https://github.com/AkashKrBanik/Hadoop-Projects/blob/main/Word%20Count/WC_SS_2.png" alt="Login Form" width="700">
+
+#### Output:
+<img src="https://github.com/AkashKrBanik/Hadoop-Projects/blob/main/Word%20Count/WC_SS_3.png" alt="Login Form" width="700">
+
+#### Output File Contents:
+<img src="https://github.com/AkashKrBanik/Hadoop-Projects/blob/main/Word%20Count/WC_SS_4.png" alt="Login Form" width="700">
 
 ## Conclusion
 
